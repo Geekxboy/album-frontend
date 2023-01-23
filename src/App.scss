@@ -1,0 +1,74 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.header {
+  font-size: 1.5em;
+  font-weight: 800;
+  text-align: left;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.page-title {
+  font-size: 2em;
+  color: white;
+  padding: 30px;
+}
+
+.album-list, .photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: center;
+
+  .album, .image-container { 
+    flex: 1 0 calc(25% - 40px);
+    max-width: calc(25% - 40px);
+    margin: 10px;
+  }
+
+  .image-container {
+    color: #fff;
+    
+    .image {
+      width: 100%;
+    }
+  }
+
+  .album {
+    aspect-ratio : 1 / 1;
+    background: #cecece;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 600;
+    
+    p {
+      padding-top: 50%;
+      transform: translateY(-25%);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .album, .image-container { 
+      flex: 1 0 calc(33% - 40px);
+      max-width: calc(33% - 40px);
+    }
+  } 
+
+  @media only screen and (max-width: 600px) {
+    .album, .image-container { 
+      flex: 1 0 calc(50% - 40px);
+      max-width: calc(50% - 40px);
+    }
+  } 
+}
