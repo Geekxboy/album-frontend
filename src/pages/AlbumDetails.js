@@ -20,13 +20,13 @@ export default function AlbumDetails({albums}) {
   const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+    fetch("https://jsonplaceholder.typicode.com/albums/" + id + "/photos")
       .then((response) => response.json())
       .then(setPhotos)
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [id]);
 
   // Create photo components
   const photoList = photos.map((photo, index) => (
